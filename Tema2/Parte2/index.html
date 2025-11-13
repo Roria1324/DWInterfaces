@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="300" height="450">
+        <defs>
+            <pattern id="patron1" x="5" y="0" width="40" height="20"
+                patternUnits="userSpaceOnUse">  
+                    <rect x="2" y="1" width="40" height="15" fill="#000" stroke="white" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect x="25" y="10" width="200" height="100" fill="url(#patron1)" stroke="#f00"/>
+
+        <defs>
+            <pattern id="patron2" width="20" height="20"
+                patternUnits="userSpaceOnUse">
+                    <image href="patron.png" x="1" y="1" height="100" width="100"/>
+            </pattern>
+        </defs>
+         <rect x="25" y="150" width="2000" height="1000" fill="url(#patron2)"/>
+    </svg>
+</body>
+</html>

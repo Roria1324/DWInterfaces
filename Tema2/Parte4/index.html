@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="ptzb" src="pts.jpg" alt="plantas vs zombies">
+    <canvas id="lienzo" width="736" height="506"></canvas>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            const canvas = document.getElementById("lienzo")
+                if(canvas && canvas.getContext){
+
+                    const ctx = canvas.getContext("2d")
+
+                    let srcImagen = document.getElementById("ptzb")
+
+                    ctx.drawImage(srcImagen, 0,0)
+
+                    let imgData = ctx.getImageData(0,0,ctx.canvas.width, ctx.canvas.height)
+                    let pixeles = imgData.data
+
+                    for (let i = 0; i < pixeles.length; i+=4) {
+                        let r = pixeles[i];
+                        let g = pixeles[i+1];
+                        let b = pixeles[i+2];
+
+                        let nuevoR = 0.393*r + 0.769*g + 0.189*b
+                        let nuevoG = 0.349*r + 0.686*g + 0.168*b
+                        let nuevoB = 0.272*r + 0.534*g + 0.131*b
+
+                        pixeles[i] = nuevoR
+                        pixeles[i+1] = nuevoG
+                        pixeles[i+2] = nuevoB
+                    }
+                    ctx.putImageData(imgData,0,0)
+                }
+        }
+    </script>
+</body>
+</html>

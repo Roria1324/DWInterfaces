@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="lienzo" width="400" height="400"></canvas>
+    <script type="text/javascript">
+        const canvas = document.getElementById("lienzo");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(0,150,0)"
+        ctx.fillRect(25,25,60,60)
+
+        ctx.fillStyle = "rgb(255,0,255,0.7)"
+        ctx.fillRect(45,45,60,60)
+    </script>
+</body>
+</html>

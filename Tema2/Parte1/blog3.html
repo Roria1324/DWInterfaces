@@ -13,9 +13,55 @@
 </head>
 <body>
 
+    <video id="video" width="1000" height="760" >
+        <source  src="./imagenes/figura.mp4">
+    </video>
+
+    <button type="button" onclick='reiniciar()'>Reiniciar</button>
+
+    <button type="button" onclick="retrasar()">Retrasar</button>
+
+    <button type="button"  onclick="adelantar()">Adelantar</button>
+
+    <button type="button" id="silenciar"  onclick="silenciar()">Silenciar</button>
+
+    <button type="button"  onclick="bajarVolumen()">Bajar Volumen</button>
+
+    <button type="button"  onclick="subirVolumen()">Subir Volumen</button>
+
     <video width="1000" height="760" controls >
         <source  src="./imagenes/figura.mp4#t=2,7" type="video/mp4">
     </video>
     
+
+    <script >
+        const video = document.getElementById("video");
+        const reiniciar = () => {
+            video.play();
+        }
+
+        const adelantar = () => {
+            video.currentTime+=5;
+        }
+
+        const retrasar = () => {
+            video.currentTime-=5;
+        }
+
+        const silenciar = () => {
+            const boton = document.getElementById("silenciar");
+                video.muted = !video.muted;
+                boton.textContent = video.muted ? "Escuchar" : "Silenciar"
+        }
+
+        const bajarVolumen = () => {
+            video.volume-=0.1
+        }
+
+        const subirVolumen = () => {
+            video.volume+=0.1
+        }
+
+    </script>
 </body>
 </html>

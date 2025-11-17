@@ -7,14 +7,14 @@
     <header>
         <h1>Blog3</h1>
             <nav>
-                <a href="index.html">Inicio</a>
+                <a href="ejercicio2-1.html">Inicio</a>
             </nav>
     </header>
 </head>
 <body>
 
     <video id="video" width="1000" height="760" >
-        <source  src="./imagenes/figura.mp4">
+        <source  src="figura.mp4">
     </video>
 
     <button id="reiniciar">Reiniciar</button>
@@ -30,7 +30,7 @@
     <button id="subir" >Subir Volumen</button>
 
     <video width="1000" height="760" controls >
-        <source  src="./imagenes/figura.mp4#t=2,7" type="video/mp4">
+        <source  src="figura.mp4#t=2,7" type="video/mp4">
     </video>
     
 
@@ -40,6 +40,7 @@
 
             const botonReiniciar = document.getElementById("reiniciar");
             botonReiniciar.addEventListener("click", () => {
+                video.currentTime = 0;
                 video.play();
             })
         

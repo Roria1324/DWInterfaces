@@ -39,9 +39,17 @@
 			if (lastPress == KEY_LEFT) x -= 5;
 			if (lastPress == KEY_UP) y -= 5;
 			if (lastPress == KEY_DOWN) y += 5;
-    		if (x >= canvas.width) x = 0;
-			if (y >= canvas.width) y = 0
-			if (lastPress == KEY_P) x = canvas.width, y = canvas.width
+
+    		if (x >= canvas.width) x = 1;
+			if (x <= 0) x = canvas.width;
+			if (y >= canvas.height) y = 1;
+			if (y <= 0) y = canvas.height;
+
+			if (lastPress === KEY_P) {
+				lienzo.fillStyle = "black"
+				lienzo.font = "30px Arial"
+				lienzo.fillText("Juego Pausado", 200, 200)
+			}
 	}
 
 	function pintarLienzo(lienzo) {
